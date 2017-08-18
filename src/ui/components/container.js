@@ -1,4 +1,25 @@
 import React from 'react';
 
+export class ErrorComponent extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                error:false,
+            }
+            this.onClick = this.onClick.bind(this);
+        }
 
-export default () => (<div>CONTAINER</div>);
+        componentDidUpdate() {
+            throw new Error('ERROR GROSO');
+        }
+        onClick(){
+            this.setState({error:true});
+        }
+        render() {
+           return <span>
+                <div onClick={this.onClick}>OJO QUE ESTA ROTO</div>
+            </span>
+        }
+}
+
+export default () => (<div>CONTAINER<br/><ErrorComponent /></div>);
