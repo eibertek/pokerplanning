@@ -1,4 +1,4 @@
 {
-  "presets": [["es2015", "react"]],
-  "plugins": ["transform-object-rest-spread", "transform-decorators"]
+  "presets": [ "latest", "es2015-loose", "react", "es2015", "stage-2"],
+  "plugins": [["transform-class-properties"], "transform-object-rest-spread", "transform-decorators", "transform-export-extensions"]  
 }

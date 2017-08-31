@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Container from './components/container.js';
-import InputComponent from './components/input.js';
+import AnimatedSpriteSheet from './components/Animations/AnimatedSpriteSheet.js';
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -18,13 +18,19 @@ class App extends React.Component {
         // You can render any custom fallback UI
             return <h1>Something went wrong.</h1>;
         }        
-       
-        return <div><Container name="Mariano">
-            <InputComponent />
-            <InputComponent />
-            <InputComponent />
-            <InputComponent />
-            </Container></div>;
+        const content = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,].map(item =>             
+        <Container name="Mariano">
+            <AnimatedSpriteSheet
+            filename={"public/img/goku_stand.png"}
+            initialFrame={0}
+            frame={{ width: 44, height: 90 }}
+            bounds={{ x: 0, y: 0, width: 44, height: 90 }}
+            isPlaying={true}
+            loop={true}
+            speed={300}
+            />
+        </Container> );
+        return <div>{content}</div>;
     }
 } 
 

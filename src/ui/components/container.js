@@ -38,7 +38,7 @@ export class Container extends React.Component {
             this.setState({error:true});
         }
         render() {
-           return <div>
+           return <div style={ {'float':'left'} }>
                {React.Children.map(this.props.children, child => {
                     return React.cloneElement(child, {
                     name: 'man'
