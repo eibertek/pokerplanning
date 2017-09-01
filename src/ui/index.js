@@ -18,11 +18,12 @@ class App extends React.Component {
         // You can render any custom fallback UI
             return <h1>Something went wrong.</h1>;
         }        
-        const content = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,].map(item =>             
+        const content = [0].map(item =>             
         <Container name="Mariano">
             <AnimatedSpriteSheet
             filename={"public/img/goku_stand.png"}
             initialFrame={0}
+            finalFrame={2}
             frame={{ width: 44, height: 90 }}
             bounds={{ x: 0, y: 0, width: 44, height: 90 }}
             isPlaying={true}

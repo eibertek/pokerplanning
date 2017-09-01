@@ -8,6 +8,7 @@ class AnimatedSpriteSheet extends Component {
   static propTypes = {
     filename: PropTypes.string,
     initialFrame: PropTypes.number,
+    finalFrame: PropTypes.number,
     frame: PropTypes.shape({
       height: PropTypes.number,
       width: PropTypes.number,
@@ -25,6 +26,7 @@ class AnimatedSpriteSheet extends Component {
 
   static defaultProps = {
     initialFrame: 0,
+    finalFrame: 0,
     frame: {
       width: 0,
       height: 0,
@@ -48,7 +50,7 @@ class AnimatedSpriteSheet extends Component {
     const maxFramesHeight = ((this.props.bounds.height - this.props.bounds.y) /
       this.props.frame.height);
 
-    const maxFrames = maxFramesWidth * maxFramesHeight;
+    const maxFrames = this.props.finalFrame ? this.props.finalFrame : maxFramesWidth * maxFramesHeight;
 
     this.state = {
       frame: props.initialFrame,
